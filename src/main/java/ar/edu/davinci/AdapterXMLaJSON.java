@@ -2,22 +2,18 @@ package ar.edu.davinci;
 
 public class AdapterXMLaJSON implements DatosJSON {
     private BibliotecaAnalisis bibliotecaAnalisis;
-    private String xmlData;
 
-    public AdapterXMLaJSON(BibliotecaAnalisis bibliotecaAnalisis, String xmlData) {
+    public AdapterXMLaJSON(BibliotecaAnalisis bibliotecaAnalisis) {
         this.bibliotecaAnalisis = bibliotecaAnalisis;
-        this.xmlData = xmlData;
     }
 
     @Override
-    public String obtenerDatos() {
-
+    public String obtenerDatos(String xmlData) {
         String jsonData = parse(xmlData);
         return bibliotecaAnalisis.analizarDatos(jsonData);
     }
 
     private String parse(String xml) {
-
         return "{...}";
     }
 }
